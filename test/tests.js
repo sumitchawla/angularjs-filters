@@ -31,5 +31,22 @@ describe("ch.filters - Tests", function() {
      assert.equal(filter('Hello {0}. What are you been doing this {1}?', 'Sam', 'Sunday') , 'Hello Sam. What are you been doing this Sunday?');
    }));
 
+   it('Tests string.html2string filter', inject(function($filter) {
+     var filter = $filter('string.html2string');
+     assert.equal(filter('Hello <br/>. How are you?') , 'Hello . How are you?');
+   }));
+
+   it('Tests string.shorten filter', inject(function($filter) {
+     var filter = $filter('string.shorten');
+     assert.equal(filter('', 3) , '');
+     assert.equal(filter('', 1) , '');
+     assert.equal(filter(null, 1) , '');
+     assert.equal(filter(undefined, 1) , '');
+     assert.equal(filter('Hello', 20) , 'Hello');
+     assert.equal(filter('Hello', 5) , 'Hello');
+     assert.equal(filter('Hello', 3) , 'Hel');
+     assert.equal(filter('A long story cut into short', 12) , 'A long story...');
+   }));
+
 });
 
