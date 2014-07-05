@@ -13,6 +13,7 @@
     "url": "https://github.com/sumitchawla/angularjs-filters.git"
   },
   "devDependencies": {
+    "phantomjs" : "~1.9",
     "karma": "~0.12",
     "karma-chai": "~0.1",
     "karma-mocha": "~0.1",
@@ -24,8 +25,7 @@
     "url": "https://github.com/sumitchawla/angularjs-filters/issues"
   },
   "scripts": {
-    "start": "npm install -g karma phantomjs karma-phantomjs-launcher",      
-    "test": "karma start karma.conf.js"
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS'"
   },
   "license": "MIT"
 }
