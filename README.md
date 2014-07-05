@@ -4,4 +4,15 @@ angularjs-filters
 A library of common AngularJS filters.
 
 
-WIP - See tests.js for examples
+### String Filters
+ 
+
+ * string.format
+
+```js
+    //Usage
+    ng-text="'Hello {0}. What are you been doing this {1}?' | string.format : 'Sam' : 'evening' " 
+```
+ * 
+
+   
