@@ -5,4 +5,10 @@ angular.module("ch.filters",[])
       return str;
     }
   }
+])
+.filter("boolean.YesNo", [ function() {
+  return function(b){
+      return b === true? 'Yes' : 'No';
+    }
+  }
 ]);
