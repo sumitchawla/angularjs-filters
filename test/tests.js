@@ -2,10 +2,11 @@ var assert = chai.assert;
 describe("ch.filters - Tests", function() {
   beforeEach(module('ch.filters'));
   
-  it('Tests debug.print filter', inject(function($filter) {
-    var filter = $filter('debug.print');
-    assert(filter('test') == 'test');
-  }));
+   console.log("jQuery Version", $().jquery);
+   it('Tests debug.print filter', inject(function($filter) {
+     var filter = $filter('debug.print');
+     assert(filter('test') == 'test');
+   }));
 
 
    it('Tests boolean.YesNo filter', inject(function($filter, $rootScope, $compile) {
@@ -23,6 +24,12 @@ describe("ch.filters - Tests", function() {
     assert.equal($(elem).text(),'No');
     ($scope.MyBoolean = true) && $scope.$digest();
     assert.equal($(elem).text(),'Yes');
-  }));
+   }));
+
+   it('Tests string.format filter', inject(function($filter) {
+     var filter = $filter('string.format');
+     assert.equal(filter('Hello {0}. What are you been doing this {1}?', 'Sam', 'Sunday') , 'Hello Sam. What are you been doing this Sunday?');
+   }));
+
 });
 
