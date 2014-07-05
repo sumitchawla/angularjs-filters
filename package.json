@@ -13,9 +13,11 @@
     "url": "https://github.com/sumitchawla/angularjs-filters.git"
   },
   "devDependencies": {
-    "karma": "~0.10",
+    "karma": "~0.12",
+    "karma-chai": "~0.1",
     "karma-mocha": "~0.1",
-    "mocha": "1.20.1"
+    "karma-phantomjs-launcher": "^0.1.4",
+    "mocha": "~1.20"
   },
   "main": "angularjs-filters",
   "bugs": {

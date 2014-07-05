@@ -1,3 +1,4 @@
+var assert = mocha.assert;
 angular.module("ch.filters",[])
 .filter("debug.print", [ function() {
   return function(str){
