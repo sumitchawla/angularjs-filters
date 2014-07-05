@@ -1,13 +1,14 @@
-<h1 id="angularjs-filters">angularjs-filters</h1>
+angularjs-filters
+=================
 
-<p>A library of common AngularJS filters.</p>
+A library of common AngularJS filters.
 
-<h3 id="string-filters">String Filters</h3>
 
-<p></p><ul> <br>
-<li>string.format -  <br><p></p>
+### String Filters
+ 
 
-<blockquote>
-  <p>&lt;div ng-text=“‘Hello {0}. What are you been doing this {1}?’ | string.format : ‘Sam’ : ‘evening’”/&gt;</p></blockquote></li>
-   -  <br>
-  </ul><p></p>
+ - string.format - 
+   > &lt;div ng-text="'Hello {0}. What are you been doing this {1}?' | string.format : 'Sam' : 'evening'"/>
+ - 
+
+   
