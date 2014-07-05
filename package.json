@@ -24,6 +24,7 @@
     "url": "https://github.com/sumitchawla/angularjs-filters/issues"
   },
   "scripts": {
+    "start": "npm install -g karma phantomjs karma-phantomjs-launcher",      
     "test": "karma start karma.conf.js"
   },
   "license": "MIT"
