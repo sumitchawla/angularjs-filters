@@ -1,0 +1,28 @@
+{
+  "name": "angularjs-filters",
+  "author": "Sumit Chawla",
+  "version": "0.0.1",
+  "description": "AngularJs common filters",
+  "keywords": [
+    "angularjs",
+    "filters"
+  ],
+  "homepage": "https://github.com/sumitchawla/angularjs-filters",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sumitchawla/angularjs-filters.git"
+  },
+  "devDependencies": {
+    "karma": "~0.10",
+    "karma-mocha": "~0.1",
+    "mocha": "1.20.1"
+  },
+  "main": "angularjs-filters",
+  "bugs": {
+    "url": "https://github.com/sumitchawla/angularjs-filters/issues"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "license": "MIT"
+}
