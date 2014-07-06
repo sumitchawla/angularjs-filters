@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sumitchawla/angularjs-filters.svg?branch=master)](https://travis-ci.org/sumitchawla/angularjs-filters)
+
 angularjs-filters
 =================
 
@@ -5,14 +7,24 @@ A library of common AngularJS filters.
 
 
 ### String Filters
- 
 
  * string.format
 
 ```js
-    //Usage
     ng-text="'Hello {0}. What are you been doing this {1}?' | string.format : 'Sam' : 'evening' " 
 ```
- * 
-
+ * string.html2string
+ 
+```js
+    ng-text="'Hello <br/>. How are you?}?' | string.html2string " 
+  //Returns
+  Hello . How are you?
+```
+ * string.shorten
+ 
+```js
+    ng-text="'A long story cut into short' | string.shorten : 12 " 
+  //Returns
+  A long story...
+```
    
