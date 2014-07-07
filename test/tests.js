@@ -48,5 +48,41 @@ describe("ch.filters - Tests", function() {
      assert.equal(filter('A long story cut into short', 12) , 'A long story...');
    }));
 
+   it('Tests string.lowercase filter', inject(function($filter) {
+     var filter = $filter('string.lowercase');
+     assert.equal(filter('') , '');
+     assert.equal(filter(null) , '');
+     assert.equal(filter(undefined) , '');
+     assert.equal(filter('Hello') , 'hello');
+     assert.equal(filter('HeLLo') , 'hello');
+     assert.equal(filter('HeLLo ##453$$') , 'hello ##453$$');
+     assert.equal(filter('A Long Story - 1943') , 'a long story - 1943');
+     assert.equal(filter('1943') , '1943');
+   }));
+
+   it('Tests string.uppercase filter', inject(function($filter) {
+     var filter = $filter('string.uppercase');
+     assert.equal(filter('') , '');
+     assert.equal(filter(null) , '');
+     assert.equal(filter(undefined) , '');
+     assert.equal(filter('Hello') , 'HELLO');
+     assert.equal(filter('HeLLo') , 'HELLO');
+     assert.equal(filter('HeLLo ##453$$') , 'HELLO ##453$$');
+     assert.equal(filter('A Long Story - 1943') , 'A LONG STORY - 1943');
+     assert.equal(filter('1943') , '1943');
+   }));
+
+    it.skip('Tests string.camelcase filter', inject(function($filter) {
+     var filter = $filter('string.camelcase');
+     assert.equal(filter('') , '');
+     assert.equal(filter(null) , '');
+     assert.equal(filter(undefined) , '');
+     assert.equal(filter('Hello') , 'Hello');
+     assert.equal(filter('HeLLo') , 'Hello');
+     assert.equal(filter('HeLLo ##453$$') , 'Hello ##453$$');
+     assert.equal(filter('A Long Story - 1943') , 'A Long Story - 1943');
+     assert.equal(filter('a long story - 1943') , 'A Long Story - 1943');
+     assert.equal(filter('1943') , '1943');
+   }));
 });
 
