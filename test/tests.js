@@ -72,16 +72,21 @@ describe("ch.filters - Tests", function() {
      assert.equal(filter('1943') , '1943');
    }));
 
-    it.skip('Tests string.camelcase filter', inject(function($filter) {
+    it('Tests string.camelcase filter', inject(function($filter) {
      var filter = $filter('string.camelcase');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , '');
      assert.equal(filter(undefined) , '');
      assert.equal(filter('Hello') , 'Hello');
      assert.equal(filter('HeLLo') , 'Hello');
+     assert.equal(filter(' HeLLo') , ' Hello');
+     assert.equal(filter(' HeLLo ') , ' Hello ');
      assert.equal(filter('HeLLo ##453$$') , 'Hello ##453$$');
      assert.equal(filter('A Long Story - 1943') , 'A Long Story - 1943');
-     assert.equal(filter('a long story - 1943') , 'A Long Story - 1943');
+     assert.equal(filter('A Long Story - 1943') , 'A Long Story - 1943');
+     assert.equal(filter(' a long story - 1943') , ' A Long Story - 1943');
+     assert.equal(filter('foo-bar') , 'Foo-bar');
+     assert.equal(filter('-foo-bar') , '-foo-bar');
      assert.equal(filter('1943') , '1943');
    }));
 });

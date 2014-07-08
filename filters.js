@@ -49,8 +49,8 @@ angular.module("ch.filters",[])
   }
 ]).filter("string.camelcase", [ function(){
  return function(str){
-    return (str || '').toLowerCase().replace(/(^.|-.)?/g, function(match, group) {
-        return group.toUpperCase();
+    return (str || '').toLowerCase().replace(/(\s.|^.)/g, function(match, group) {
+        return group ? group.toUpperCase() : '';
     });
   } 
  }                
