@@ -20,7 +20,7 @@ A library of common AngularJS filters.
   </tr>
   <tr>
    <td><i><b>string.html2string</b></i></td>
-   <td><i>'Hello <br/>. How are you?}?' | string.html2string</i></td>
+   <td><i>'Hello &lt;br/&gt;. How are you?}?' | string.html2string</i></td>
    <td><i>Hello . How are you?</i></td>
   </tr>
   <tr>
@@ -29,7 +29,7 @@ A library of common AngularJS filters.
    <td><i>A long story...</i></td>
   </tr>
   <tr>
-   <td><i><b>string.shorten</b></i></td>
+   <td><i><b>string.camelcase</b></i></td>
    <td><i>'A long story cut into short' | string.camelcase</i></td>
    <td><i>A Long Story Cut Into Short</i></td>
   </tr>
