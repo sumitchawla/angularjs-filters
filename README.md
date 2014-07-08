@@ -8,10 +8,10 @@ A library of common AngularJS filters.
 
 ### String Filters
 <table>
- <th>
+  <tr>
    <th>Filter</th>
    <th>Usage</th>
-   <th>Result</i></td>
+   <th>Result</i></th>
   </tr>
   <tr>
    <td><i><b>string.format</b></i></td>
