@@ -27,4 +27,35 @@ A library of common AngularJS filters.
   //Returns
   A long story...
 ```
-   
+
+ * string.camelcase 
+    Convert the string to Camel Case
+```js
+    ng-text="'A long story cut into short' | string.camelcase" 
+  //Returns
+  A Long Story Cut Into Short
+```
+
+ * string.lowercase
+ 
+```js
+    ng-text="'Convert to LOWERCASE' | string.lowercase " 
+  //Returns
+  convert to lowercase
+```
+
+ * string.uppercase
+ 
+```js
+    ng-text="'uppercase all' | string.uppercase " 
+  //Returns
+  UPPERCASE ALL
+```
+
+<table>
+  <tr>
+   <td> Test Table</td>
+   <td> Test Table</td>
+  </tr>
+</table>
+
