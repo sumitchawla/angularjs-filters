@@ -53,9 +53,15 @@ A library of common AngularJS filters.
 ```
 
 <table>
+ <th>
+   <th>Filter</td>
+   <th>Usage</td>
+   <th>Result</td>
+  </tr>
   <tr>
-   <td> Test Table</td>
-   <td> Test Table</td>
+   <td><b>string.format</b></td>
+   <td>ng-text="'Hello {0}. What are you been doing this {1}?' | string.format : 'Sam' : 'evening' " </td>
+   <td>Hello Sam. What are you been doing this evening?</td>
   </tr>
 </table>
 
