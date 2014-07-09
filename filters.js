@@ -54,4 +54,25 @@ angular.module("ch.filters",[])
     });
   } 
  }                
+]).filter("string.trim", [ function(){
+ return function(str){
+    return (str || '').replace(/(^\s*|\s*$)/g, function(match, group) {
+        return '';
+    });
+  } 
+ }                
+]).filter("string.trimstart", [ function(){
+ return function(str){
+   return (str || '').replace(/(^\s*)/g, function(match, group) {
+        return '';
+    });
+  } 
+ }                
+]).filter("string.trimend", [ function(){
+ return function(str){
+    return (str || '').replace(/(\s*$)/g, function(match, group) {
+        return '';
+    });  
+  } 
+ }                
 ]);

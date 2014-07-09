@@ -89,5 +89,57 @@ describe("ch.filters - Tests", function() {
      assert.equal(filter('-foo-bar') , '-foo-bar');
      assert.equal(filter('1943') , '1943');
    }));
+
+   it('Tests string.trim filter', inject(function($filter) {
+     var filter = $filter('string.trim');
+     assert.equal(filter('') , '');
+     assert.equal(filter(null) , '');
+     assert.equal(filter(undefined) , '');
+     assert.equal(filter('Hello') , 'Hello');
+     assert.equal(filter(' Hello') , 'Hello');
+     assert.equal(filter('  Hello') , 'Hello');
+     assert.equal(filter('Hello ') , 'Hello');
+     assert.equal(filter('Hello  ') , 'Hello');
+     assert.equal(filter(' Hello ') , 'Hello');
+     assert.equal(filter('  Hello  ') , 'Hello');
+     assert.equal(filter('a long story - 1943') , 'a long story - 1943');
+     assert.equal(filter(' a long story - 1943') , 'a long story - 1943');
+     assert.equal(filter('a long story - 1943 ') , 'a long story - 1943');
+   }));
+ 
+
+    it('Tests string.trimstart filter', inject(function($filter) {
+     var filter = $filter('string.trimstart');
+     assert.equal(filter('') , '');
+     assert.equal(filter(null) , '');
+     assert.equal(filter(undefined) , '');
+     assert.equal(filter('Hello') , 'Hello');
+     assert.equal(filter(' Hello') , 'Hello');
+     assert.equal(filter('  Hello') , 'Hello');
+     assert.equal(filter('Hello ') , 'Hello ');
+     assert.equal(filter('Hello  ') , 'Hello  ');
+     assert.equal(filter(' Hello ') , 'Hello ');
+     assert.equal(filter('  Hello  ') , 'Hello  ');
+     assert.equal(filter('a long story - 1943') , 'a long story - 1943');
+     assert.equal(filter(' a long story - 1943') , 'a long story - 1943');
+     assert.equal(filter('a long story - 1943 ') , 'a long story - 1943 ');
+   }));
+
+     it('Tests string.trimend filter', inject(function($filter) {
+     var filter = $filter('string.trimend');
+     assert.equal(filter('') , '');
+     assert.equal(filter(null) , '');
+     assert.equal(filter(undefined) , '');
+     assert.equal(filter('Hello') , 'Hello');
+     assert.equal(filter(' Hello') , ' Hello');
+     assert.equal(filter('  Hello') , '  Hello');
+     assert.equal(filter('Hello ') , 'Hello');
+     assert.equal(filter('Hello  ') , 'Hello');
+     assert.equal(filter(' Hello ') , ' Hello');
+     assert.equal(filter('  Hello  ') , '  Hello');
+     assert.equal(filter('a long story - 1943') , 'a long story - 1943');
+     assert.equal(filter(' a long story - 1943') , ' a long story - 1943');
+     assert.equal(filter('a long story - 1943 ') , 'a long story - 1943');
+   }));
 });
 

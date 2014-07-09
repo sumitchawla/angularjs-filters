@@ -3,8 +3,7 @@
 angularjs-filters
 =================
 
-A library of common AngularJS filters.
-
+A library of common AngularJS filters. Each filter is individually tested for various inputs.
 
 ### String Filters
 <table>
@@ -43,4 +42,12 @@ A library of common AngularJS filters.
    <td><i>'uppercase all' | string.uppercase</i></td>
    <td><i>UPPERCASE ALL</i></td>
   </tr>
+  <tr>
+   <td><i><b>string.trim, string.trimstart, string.trimend</b><br/> String Trim Functions </i></td>
+   <td><i>' Hello Mr. ' | string.trim</i></td>
+   <td><i>Hello Mr.</i></td>
+  </tr>
 </table>
+
+### Unit Testing
+Each of the filter is covered by Unit Test extensively.  If you find any input unhandelled, please let me know.
