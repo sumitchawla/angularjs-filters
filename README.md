@@ -49,5 +49,71 @@ A library of common AngularJS filters. Each filter is individually tested for va
   </tr>
 </table>
 
+### Array Filters
+<table>
+  <tr>
+   <th>Filter</th>
+   <th>Usage</th>
+   <th>Result</i></th>
+  </tr>
+  <tr>
+   <td><i><b>array.join</b></i></td>
+   <td><i>['Hello','Mr.','How','Are','You?'] | array.join : '-'</i></td>
+   <td><i>Hello-Mr.-How-Are-You?</i></td>
+  </tr>
+ <tr>
+   <td><i><b>array.reverse</b></i></td>
+   <td><i>ng-repeat='["Banana", "Orange", "Apple", "Mango"] | array.reverse'</i></td>
+   <td><i>"Mango","Apple","Orange", "Banana"</i></td>
+ </tr>
+</table>
+
+### Math Filters
+<table>
+  <tr>
+   <th>Filter</th>
+   <th>Usage</th>
+   <th>Result</i></th>
+  </tr>
+  <tr>
+   <td><i><b>math.max</b></i></td>
+   <td><i>[8, 1, 2, 3, 7] | math.max</i></td>
+   <td><i>8</i></td>
+  </tr>
+  <tr>
+   <td><i><b>math.min</b></i></td>
+   <td><i>[8, 1, 2, 3, 7] | math.min</i></td>
+   <td><i>1</i></td>
+  </tr>
+</table>
+
+### Boolean Filters
+<table>
+  <tr>
+   <th>Filter</th>
+   <th>Usage</th>
+   <th>Result</i></th>
+  </tr>
+  <tr>
+   <td><i><b>binary.YesNo</b><br/>Converts boolean value to Yes/No</i></td>
+   <td><i>A == B | binary.YesNo</i></td>
+   <td><i>Yes/No?</i></td>
+  </tr>
+</table>
+
+### Debug Filters
+<table>
+  <tr>
+   <th>Filter</th>
+   <th>Usage</th>
+   <th>Result</i></th>
+  </tr>
+  <tr>
+   <td><i><b>debug.print</b><br/>Debug prints the bound value</i></td>
+   <td><i>'MyValue' | debug.print</i></td>
+   <td><i>MyValue</i></td>
+  </tr>
+</table>
+
 ### Unit Testing
 Each of the filter is covered by Unit Test extensively.  If you find any input unhandelled, please let me know.
