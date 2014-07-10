@@ -125,7 +125,7 @@ describe("ch.filters - Tests", function() {
      assert.equal(filter('a long story - 1943 ') , 'a long story - 1943 ');
    }));
 
-     it('Tests string.trimend filter', inject(function($filter) {
+   it('Tests string.trimend filter', inject(function($filter) {
      var filter = $filter('string.trimend');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , '');
@@ -140,6 +140,48 @@ describe("ch.filters - Tests", function() {
      assert.equal(filter('a long story - 1943') , 'a long story - 1943');
      assert.equal(filter(' a long story - 1943') , ' a long story - 1943');
      assert.equal(filter('a long story - 1943 ') , 'a long story - 1943');
+   }));
+
+   it('Tests math.max filter', inject(function($filter) {
+     var filter = $filter('math.max');
+     assert.equal(filter('') , '');
+     assert.equal(filter(null) , null);
+     assert.equal(filter(undefined) , undefined);
+     assert.equal(filter([1, 2, 3, 4]) , 4);
+     assert.equal(filter([1, 2,1, 4, 3, 4]) , 4);
+     assert.equal(filter([1, 2, -5 , 6, 3, 4]) , 6);
+     assert.equal(filter([8, 1, 2, 3, 7]) , 8);
+   }));
+
+  it('Tests math.min filter', inject(function($filter) {
+     var filter = $filter('math.min');
+     assert.equal(filter('') , '');
+     assert.equal(filter(null) , null);
+     assert.equal(filter(undefined) , undefined);
+     assert.equal(filter([1, 2, 3, 4]) , 1);
+     assert.equal(filter([1, 2,1, 4, 3, 4]) , 1);
+     assert.equal(filter([1, 2, -5 , 6, 3, 4]) , -5);
+     assert.equal(filter([8, 1, 2, 3, 7]) , 1);
+     assert.equal(filter([8, 1, 0, 2, 3, 7]) , 0);
+     assert.equal(filter([8, 1, 0, 2, 3, 7, -1]) , -1);
+   }));
+
+  it('Tests array.join filter', inject(function($filter) {
+     var filter = $filter('array.join');
+     assert.equal(filter('') , '');
+     assert.equal(filter(null) , null);
+     assert.equal(filter(undefined) , undefined);
+     assert.equal(filter([1, 2, 3, 4]) , '1,2,3,4');
+     assert.equal(filter(["Banana", "Orange", "Apple", "Mango"]) , 'Banana,Orange,Apple,Mango');
+   }));
+
+   it('Tests math.max filter', inject(function($filter) {
+     var filter = $filter('array.reverse');
+     assert.equal(filter('') , '');
+     assert.equal(filter(null) , null);
+     assert.equal(filter(undefined) , undefined);
+     assert.deepEqual(filter([1, 2, 3, 4]), [4, 3, 2, 1]);
+     assert.deepEqual(filter(["Banana", "Orange", "Apple", "Mango"]) , [  "Mango","Apple","Orange", "Banana"]);
    }));
 });
 

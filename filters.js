@@ -75,4 +75,28 @@ angular.module("ch.filters",[])
     });  
   } 
  }                
+]).filter("math.max", [ function(){
+ return function(arr){
+    if (!arr) return arr;
+    return Math.max.apply(null, arr);  
+  } 
+ }                
+]).filter("math.min", [ function(){
+ return function(arr){
+    if (!arr) return arr;
+    return Math.min.apply(null, arr);   
+  } 
+ }                
+]).filter("array.join", [ function(){
+ return function(arr,seperator){
+    if (!arr) return arr;
+    return arr.join(seperator || ',');   
+  } 
+ }                
+]).filter("array.reverse", [ function(){
+ return function(arr){
+    if (!arr) return arr;
+    return arr.reverse();   
+  } 
+ }                
 ]);
