@@ -142,6 +142,20 @@ describe("ch.filters - Tests", function() {
      assert.equal(filter('a long story - 1943 ') , 'a long story - 1943');
    }));
 
+   it('Tests string.replace filter', inject(function($filter) {
+     var filter = $filter('string.replace');
+     assert.equal(filter('') , '');
+     assert.equal(filter(null) , '');
+     assert.equal(filter(undefined) , '');
+     assert.equal(filter('Hello', 'Hello', 'Yes') , 'Yes');
+     assert.equal(filter('Hello Mr How are you doing', 'Mr', 'Mr.') , 'Hello Mr. How are you doing');
+     //Regex replacements
+     assert.equal(filter('Hello Mr How are you doing', /H/g, 'Y') , 'Yello Mr Yow are you doing');
+     assert.equal(filter('Hello', /\\s/,'Mr') , 'Hello');
+     assert.equal(filter('a long story - 1943',/(\d)/g, '2') , 'a long story - 2222');
+     assert.equal(filter('a long story - 1943',/(\d)/, '2') , 'a long story - 2943');
+   }));
+
    it('Tests math.max filter', inject(function($filter) {
      var filter = $filter('math.max');
      assert.equal(filter('') , '');

@@ -19,7 +19,7 @@ A library of common AngularJS filters. Each filter is individually tested for va
   </tr>
   <tr>
    <td><i><b>string.html2string</b></i></td>
-   <td><i>'Hello &lt;br/&gt;. How are you?}?' | string.html2string</i></td>
+   <td><i>'Hello &lt;br/&gt;. How are you?' | string.html2string</i></td>
    <td><i>Hello . How are you?</i></td>
   </tr>
   <tr>

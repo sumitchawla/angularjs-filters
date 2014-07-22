@@ -75,6 +75,16 @@ angular.module("ch.filters",[])
     });  
   } 
  }                
+]).filter("string.replace", [ function(){
+ return function(str, pattern, replacement){
+    try {
+      return (str || '').replace(pattern,replacement);  
+    } catch(e) {
+      console.error("error in string.replace", e);
+      return (str || '');
+    }     
+  } 
+ }                
 ]).filter("math.max", [ function(){
  return function(arr){
     if (!arr) return arr;
