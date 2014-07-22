@@ -28,6 +28,17 @@ A library of common AngularJS filters. Each filter is individually tested for va
    <td><i>A long story...</i></td>
   </tr>
   <tr>
+   <td><i><b>string.replace</b><br/> String Replace. Pattern can be a string or regex </i></td>
+   <td>
+      <i>'Hello Mr How are you doing' | string.replace : 'Mr': 'Sir'</i><br/>
+      <i>'hello Mr how are you doing' | string.replace : /h/g: 'H'</i>
+   </td>
+   <td>
+    <i>Hello Sir How are you doing</i><br/>
+    <i>Hello Mr How are you doing</i>
+  </td>
+  </tr>
+  <tr>
    <td><i><b>string.camelcase</b></i></td>
    <td><i>'A long story cut into short' | string.camelcase</i></td>
    <td><i>A Long Story Cut Into Short</i></td>
