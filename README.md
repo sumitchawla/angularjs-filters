@@ -3,7 +3,7 @@
 angularjs-filters
 =================
 
-A library of common AngularJS filters. Each filter is individually tested for various inputs.
+A library of common AngularJS filters. Each filter is individually tested for various inputs.  The module can be used by using the filter.js in your browser includes, or by using npm module ( with browserify).
 
 ### String Filters
 <table>
@@ -128,3 +128,6 @@ A library of common AngularJS filters. Each filter is individually tested for va
 
 ### Unit Testing
 Each of the filter is covered by Unit Test extensively.  If you find any input unhandelled, please let me know.
+
+### Contributions
+Please feel free to add your contributions to set of filters.
