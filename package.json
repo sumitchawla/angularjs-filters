@@ -36,7 +36,7 @@
     "url": "https://github.com/sumitchawla/angularjs-filters/issues"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS; karma start karma2.conf.js --single-run --browsers PhantomJS"
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS; ./node_modules/karma/bin/karma start karma2.conf.js --single-run --browsers PhantomJS"
   },
   "license": "MIT"
 }
