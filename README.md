@@ -5,6 +5,9 @@ angularjs-filters
 
 A library of common AngularJS filters. Each filter is individually tested for various inputs.  The module can be used by using the filter.js in your browser includes, or by using npm module ( with browserify).
 
+### Installation
+    bower install angularjs-filters
+
 ### String Filters
 <table>
   <tr>
