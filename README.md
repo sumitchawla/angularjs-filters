@@ -31,11 +31,11 @@ A library of common AngularJS filters. Each filter is individually tested for va
    <td><i><b>string.replace</b><br/> String Replace. Pattern can be a string or regex </i></td>
    <td>
       <i>'Hello Mr How are you doing' | string.replace : 'Mr': 'Sir'</i><br/>
-      <i>'hello Mr how are you doing' | string.replace : /h/g: 'H'</i>
+      <i>"hello help"| string.replace:"he[a-z]{2}":"Yell"</i>
    </td>
    <td>
     <i>Hello Sir How are you doing</i><br/>
-    <i>Hello Mr How are you doing</i>
+    <i>Yello Yell</i>
   </td>
   </tr>
   <tr>
