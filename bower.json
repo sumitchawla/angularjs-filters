@@ -1,0 +1,28 @@
+{
+  "name": "angularjs-filters",
+  "main": "index.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/sumitchawla/angularjs-filters",
+  "authors": [
+    "Sumit Chawla <sumitkchawla@gmail.com>"
+  ],
+  "description": "Common AngularJS Filters",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "AngularJS",
+    "filters",
+    "Filters",
+    "for",
+    "AngularJS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
