@@ -76,9 +76,12 @@ angular.module("ch.filters",[])
   } 
  }                
 ]).filter("string.replace", [ function(){
- return function(str, pattern, replacement){
+ return function(str, pattern, replacement, global){
+    global = (typeof global == 'undefined' ? true : global);
     try {
-      return (str || '').replace(pattern,replacement);  
+      return (str || '').replace(new RegExp(pattern,global ? "g": ""),function(match, group) {
+        return replacement;
+      });  
     } catch(e) {
       console.error("error in string.replace", e);
       return (str || '');

@@ -140,18 +140,36 @@ function executeTests () {
      assert.equal(filter('a long story - 1943 ') , 'a long story - 1943');
    }));
 
-   it('Tests string.replace filter', inject(function($filter) {
+   it('Tests string.replace filter', inject(function($rootScope,$filter, $compile) {
      var filter = $filter('string.replace');
-     assert.equal(filter('') , '');
-     assert.equal(filter(null) , '');
-     assert.equal(filter(undefined) , '');
+     //assert.equal(filter('') , '');
+     //assert.equal(filter(null) , '');
+     //assert.equal(filter(undefined) , '');
      assert.equal(filter('Hello', 'Hello', 'Yes') , 'Yes');
      assert.equal(filter('Hello Mr How are you doing', 'Mr', 'Mr.') , 'Hello Mr. How are you doing');
      //Regex replacements
-     assert.equal(filter('Hello Mr How are you doing', /H/g, 'Y') , 'Yello Mr Yow are you doing');
-     assert.equal(filter('Hello', /\\s/,'Mr') , 'Hello');
-     assert.equal(filter('a long story - 1943',/(\d)/g, '2') , 'a long story - 2222');
-     assert.equal(filter('a long story - 1943',/(\d)/, '2') , 'a long story - 2943');
+     assert.equal(filter('Hello Mr How are you doing', 'H', 'Y') , 'Yello Mr Yow are you doing');
+     assert.equal(filter('Hello', "\\s",'Mr') , 'Hello');
+     assert.equal(filter('a long story - 1943',"[0-9]", '2') , 'a long story - 2222');
+     assert.equal(filter('a long story - 1943',"[0-9]", '2', false) , 'a long story - 2943');
+
+     //Test regex using compile	
+     var $scope = $rootScope.$new();
+     var elem = $compile('<div>{{ "a long story - 1943" | string.replace:"[0-9]":"2" }}</div>')($scope);
+     $scope.$digest();
+     assert.equal($(elem).text(),'a long story - 2222');
+     elem = $compile('<div>{{ "Some Mandatory caption" | string.replace:"Man[a-z]*":"" }}</div>')($scope);
+     $scope.$digest();
+     assert.equal($(elem).text(),'Some  caption');
+     elem = $compile('<div>{{ "Hello How Hello How" | string.replace:"Hello":"" }}</div>')($scope);
+     $scope.$digest();
+     assert.equal($(elem).text(),' How  How');
+     elem = $compile('<div>{{ "Hello How Hello How" | string.replace:"Hello":"":false }}</div>')($scope);
+     $scope.$digest();
+     assert.equal($(elem).text(),' How Hello How');
+     elem = $compile('<div>{{"hello help"| string.replace:"he[a-z]{2}":"Yell" }}</div>')($scope);
+     $scope.$digest();
+     assert.equal($(elem).text(),'Yello Yell');
    }));
 
    it('Tests math.max filter', inject(function($filter) {
