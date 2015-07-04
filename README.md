@@ -130,7 +130,11 @@ A library of common AngularJS filters. Each filter is individually tested for va
 </table>
 
 ### Unit Testing
-Each of the filter is covered by Unit Test extensively.  If you find any input unhandelled, please let me know.
+Each of the filter is covered by Unit Test extensively.  If you find any input unhandelled, please let me know. Run the unit tests using following commands:
+ ```
+ npm run karma 
+ npm run karma2
+```
 
 
 ### Contributions
