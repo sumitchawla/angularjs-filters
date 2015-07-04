@@ -1,5 +1,5 @@
 angular.module("ch.filters",[])
-.filter("debug.print", [ function() {
+.filter("print", [ function() {
   return function(str){
       console.log("ch.filters.debug.print", str);
       return str;
@@ -7,14 +7,14 @@ angular.module("ch.filters",[])
   }
 ])
 /***  Boolean Filters *****/
-.filter("boolean.YesNo", [ function() {
+.filter("YesNo", [ function() {
   return function(b){
       return b === true? 'Yes' : 'No';
     }
   }
 ])
 /***  String Filters *****/
-.filter("string.format", [ function() {
+.filter("format", [ function() {
   return function(str){
       if (!str || arguments.length <=1 ) return str;
       var args = arguments;
@@ -25,57 +25,57 @@ angular.module("ch.filters",[])
       return str;
     }
   }
-]).filter("string.html2string", [ function() {
+]).filter("html2string", [ function() {
   return function(str){
       if (!str) return str;
       return $('<div/>').html(str).text();
     }
   }
-]).filter("string.shorten", [ function() {
+]).filter("shorten", [ function() {
   return function(str,length){
       if (!str || !length || str.length <= length) return (str || '');
       return  str.substr(0, length) + (length <= 3 ? '' : '...');
     }
   }
-]).filter("string.lowercase", [ function() {
+]).filter("lowercase", [ function() {
   return function(str){
       return (str || '').toLowerCase();
     }
   }
-]).filter("string.uppercase", [ function() {
+]).filter("uppercase", [ function() {
   return function(str){
       return (str || '').toUpperCase();
     }
   }
-]).filter("string.camelcase", [ function(){
+]).filter("camelcase", [ function(){
  return function(str){
     return (str || '').toLowerCase().replace(/(\s.|^.)/g, function(match, group) {
         return group ? group.toUpperCase() : '';
     });
   } 
  }                
-]).filter("string.trim", [ function(){
+]).filter("trim", [ function(){
  return function(str){
     return (str || '').replace(/(^\s*|\s*$)/g, function(match, group) {
         return '';
     });
   } 
  }                
-]).filter("string.trimstart", [ function(){
+]).filter("trimstart", [ function(){
  return function(str){
    return (str || '').replace(/(^\s*)/g, function(match, group) {
         return '';
     });
   } 
  }                
-]).filter("string.trimend", [ function(){
+]).filter("trimend", [ function(){
  return function(str){
     return (str || '').replace(/(\s*$)/g, function(match, group) {
         return '';
     });  
   } 
  }                
-]).filter("string.replace", [ function(){
+]).filter("replace", [ function(){
  return function(str, pattern, replacement, global){
     global = (typeof global == 'undefined' ? true : global);
     try {
@@ -88,25 +88,25 @@ angular.module("ch.filters",[])
     }     
   } 
  }                
-]).filter("math.max", [ function(){
+]).filter("max", [ function(){
  return function(arr){
     if (!arr) return arr;
     return Math.max.apply(null, arr);  
   } 
  }                
-]).filter("math.min", [ function(){
+]).filter("min", [ function(){
  return function(arr){
     if (!arr) return arr;
     return Math.min.apply(null, arr);   
   } 
  }                
-]).filter("array.join", [ function(){
+]).filter("join", [ function(){
  return function(arr,seperator){
     if (!arr) return arr;
     return arr.join(seperator || ',');   
   } 
  }                
-]).filter("array.reverse", [ function(){
+]).filter("reverse", [ function(){
  return function(arr){
     if (!arr) return arr;
     return arr.reverse();   

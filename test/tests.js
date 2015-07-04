@@ -1,21 +1,21 @@
    
 function executeTests () {
 
-   it('Tests debug.print filter', inject(function($filter) {
-     var filter = $filter('debug.print');
+   it('Tests print filter', inject(function($filter) {
+     var filter = $filter('print');
      assert(filter('test') == 'test');
    }));
 
 
-   it('Tests boolean.YesNo filter', inject(function($filter, $rootScope, $compile) {
-    var filter = $filter('boolean.YesNo');
+   it('Tests YesNo filter', inject(function($filter, $rootScope, $compile) {
+    var filter = $filter('YesNo');
     assert.equal(filter(null),'No');
     assert.equal(filter(),'No');
     assert.equal(filter(false),'No');
     assert.equal(filter(true),'Yes');
 
     var $scope = $rootScope.$new();
-    var elem = $compile('<div>{{ MyBoolean | boolean.YesNo }}</div>')($scope);
+    var elem = $compile('<div>{{ MyBoolean | YesNo }}</div>')($scope);
     $scope.$digest();
     assert.equal($(elem).text(),'No');
     ($scope.MyBoolean = false) && $scope.$digest();
@@ -24,18 +24,18 @@ function executeTests () {
     assert.equal($(elem).text(),'Yes');
    }));
 
-   it('Tests string.format filter', inject(function($filter) {
-     var filter = $filter('string.format');
+   it('Tests format filter', inject(function($filter) {
+     var filter = $filter('format');
      assert.equal(filter('Hello {0}. What are you been doing this {1}?', 'Sam', 'Sunday') , 'Hello Sam. What are you been doing this Sunday?');
    }));
 
-   it('Tests string.html2string filter', inject(function($filter) {
-     var filter = $filter('string.html2string');
+   it('Tests html2string filter', inject(function($filter) {
+     var filter = $filter('html2string');
      assert.equal(filter('Hello <br/>. How are you?') , 'Hello . How are you?');
    }));
 
-   it('Tests string.shorten filter', inject(function($filter) {
-     var filter = $filter('string.shorten');
+   it('Tests shorten filter', inject(function($filter) {
+     var filter = $filter('shorten');
      assert.equal(filter('', 3) , '');
      assert.equal(filter('', 1) , '');
      assert.equal(filter(null, 1) , '');
@@ -46,8 +46,8 @@ function executeTests () {
      assert.equal(filter('A long story cut into short', 12) , 'A long story...');
    }));
 
-   it('Tests string.lowercase filter', inject(function($filter) {
-     var filter = $filter('string.lowercase');
+   it('Tests lowercase filter', inject(function($filter) {
+     var filter = $filter('lowercase');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , '');
      assert.equal(filter(undefined) , '');
@@ -58,8 +58,8 @@ function executeTests () {
      assert.equal(filter('1943') , '1943');
    }));
 
-   it('Tests string.uppercase filter', inject(function($filter) {
-     var filter = $filter('string.uppercase');
+   it('Tests uppercase filter', inject(function($filter) {
+     var filter = $filter('uppercase');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , '');
      assert.equal(filter(undefined) , '');
@@ -70,8 +70,8 @@ function executeTests () {
      assert.equal(filter('1943') , '1943');
    }));
 
-    it('Tests string.camelcase filter', inject(function($filter) {
-     var filter = $filter('string.camelcase');
+    it('Tests camelcase filter', inject(function($filter) {
+     var filter = $filter('camelcase');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , '');
      assert.equal(filter(undefined) , '');
@@ -88,8 +88,8 @@ function executeTests () {
      assert.equal(filter('1943') , '1943');
    }));
 
-   it('Tests string.trim filter', inject(function($filter) {
-     var filter = $filter('string.trim');
+   it('Tests trim filter', inject(function($filter) {
+     var filter = $filter('trim');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , '');
      assert.equal(filter(undefined) , '');
@@ -106,8 +106,8 @@ function executeTests () {
    }));
  
 
-    it('Tests string.trimstart filter', inject(function($filter) {
-     var filter = $filter('string.trimstart');
+    it('Tests trimstart filter', inject(function($filter) {
+     var filter = $filter('trimstart');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , '');
      assert.equal(filter(undefined) , '');
@@ -123,8 +123,8 @@ function executeTests () {
      assert.equal(filter('a long story - 1943 ') , 'a long story - 1943 ');
    }));
 
-   it('Tests string.trimend filter', inject(function($filter) {
-     var filter = $filter('string.trimend');
+   it('Tests trimend filter', inject(function($filter) {
+     var filter = $filter('trimend');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , '');
      assert.equal(filter(undefined) , '');
@@ -140,8 +140,8 @@ function executeTests () {
      assert.equal(filter('a long story - 1943 ') , 'a long story - 1943');
    }));
 
-   it('Tests string.replace filter', inject(function($rootScope,$filter, $compile) {
-     var filter = $filter('string.replace');
+   it('Tests replace filter', inject(function($rootScope,$filter, $compile) {
+     var filter = $filter('replace');
      //assert.equal(filter('') , '');
      //assert.equal(filter(null) , '');
      //assert.equal(filter(undefined) , '');
@@ -155,25 +155,25 @@ function executeTests () {
 
      //Test regex using compile	
      var $scope = $rootScope.$new();
-     var elem = $compile('<div>{{ "a long story - 1943" | string.replace:"[0-9]":"2" }}</div>')($scope);
+     var elem = $compile('<div>{{ "a long story - 1943" | replace:"[0-9]":"2" }}</div>')($scope);
      $scope.$digest();
      assert.equal($(elem).text(),'a long story - 2222');
-     elem = $compile('<div>{{ "Some Mandatory caption" | string.replace:"Man[a-z]*":"" }}</div>')($scope);
+     elem = $compile('<div>{{ "Some Mandatory caption" | replace:"Man[a-z]*":"" }}</div>')($scope);
      $scope.$digest();
      assert.equal($(elem).text(),'Some  caption');
-     elem = $compile('<div>{{ "Hello How Hello How" | string.replace:"Hello":"" }}</div>')($scope);
+     elem = $compile('<div>{{ "Hello How Hello How" | replace:"Hello":"" }}</div>')($scope);
      $scope.$digest();
      assert.equal($(elem).text(),' How  How');
-     elem = $compile('<div>{{ "Hello How Hello How" | string.replace:"Hello":"":false }}</div>')($scope);
+     elem = $compile('<div>{{ "Hello How Hello How" | replace:"Hello":"":false }}</div>')($scope);
      $scope.$digest();
      assert.equal($(elem).text(),' How Hello How');
-     elem = $compile('<div>{{"hello help"| string.replace:"he[a-z]{2}":"Yell" }}</div>')($scope);
+     elem = $compile('<div>{{"hello help"| replace:"he[a-z]{2}":"Yell" }}</div>')($scope);
      $scope.$digest();
      assert.equal($(elem).text(),'Yello Yell');
    }));
 
-   it('Tests math.max filter', inject(function($filter) {
-     var filter = $filter('math.max');
+   it('Tests max filter', inject(function($filter) {
+     var filter = $filter('max');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , null);
      assert.equal(filter(undefined) , undefined);
@@ -183,8 +183,8 @@ function executeTests () {
      assert.equal(filter([8, 1, 2, 3, 7]) , 8);
    }));
 
-  it('Tests math.min filter', inject(function($filter) {
-     var filter = $filter('math.min');
+  it('Tests min filter', inject(function($filter) {
+     var filter = $filter('min');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , null);
      assert.equal(filter(undefined) , undefined);
@@ -196,8 +196,8 @@ function executeTests () {
      assert.equal(filter([8, 1, 0, 2, 3, 7, -1]) , -1);
    }));
 
-  it('Tests array.join filter', inject(function($filter) {
-     var filter = $filter('array.join');
+  it('Tests join filter', inject(function($filter) {
+     var filter = $filter('join');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , null);
      assert.equal(filter(undefined) , undefined);
@@ -205,8 +205,8 @@ function executeTests () {
      assert.equal(filter(["Banana", "Orange", "Apple", "Mango"]) , 'Banana,Orange,Apple,Mango');
    }));
 
-   it('Tests math.max filter', inject(function($filter) {
-     var filter = $filter('array.reverse');
+   it('Tests reverse filter', inject(function($filter) {
+     var filter = $filter('reverse');
      assert.equal(filter('') , '');
      assert.equal(filter(null) , null);
      assert.equal(filter(undefined) , undefined);

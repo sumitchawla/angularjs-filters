@@ -20,6 +20,7 @@
     "karma-bro": "~0.8",
     "karma-chai": "~0.1",
     "karma-mocha": "~0.1",
+	"karma-cli": "~0.1",
     "karma-phantomjs-launcher": "^0.1.4",
     "mocha": "~1.20",
     "browserify-shim": "3"
@@ -37,7 +38,9 @@
     "url": "https://github.com/sumitchawla/angularjs-filters/issues"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS; ./node_modules/karma/bin/karma start karma2.conf.js --single-run --browsers PhantomJS"
+	"karma": "karma start --single-run --browsers PhantomJS",
+	"karma2": "karma start karma2.conf.js --single-run --browsers PhantomJS",
+    "test": "npm run karma && npm run karma2"
   },
   "license": "MIT"
 }
