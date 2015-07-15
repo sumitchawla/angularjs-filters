@@ -145,7 +145,9 @@ function executeTests () {
      //assert.equal(filter('') , '');
      //assert.equal(filter(null) , '');
      //assert.equal(filter(undefined) , '');
-     assert.equal(filter('Hello', 'Hello', 'Yes') , 'Yes');
+	 assert.equal(filter('Hello', 'Hello', 'Yes') , 'Yes');
+	 assert.equal(filter('9.7', '\\.', ',') , '9,7');
+	 assert.equal(filter(9.7, '\\.', ',') , '9,7');
      assert.equal(filter('Hello Mr How are you doing', 'Mr', 'Mr.') , 'Hello Mr. How are you doing');
      //Regex replacements
      assert.equal(filter('Hello Mr How are you doing', 'H', 'Y') , 'Yello Mr Yow are you doing');
