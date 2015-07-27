@@ -1,7 +1,7 @@
 {
   "name": "angularjs-filters",
   "author": "Sumit Chawla",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AngularJs common filters",
   "main": "index.js",
   "keywords": [
@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "phantomjs" : "~1.9",
-    "karma": "~0.12",
+    "karma": "~0.13",
     "karma-bro": "~0.11",
     "karma-chai": "~0.1",
     "karma-mocha": "~0.2",
