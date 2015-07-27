@@ -1,6 +1,6 @@
 {
   "name": "angularjs-filters",
-  "main": "index.js",
+  "main": "filters.js",
   "version": "0.0.1",
   "homepage": "https://github.com/sumitchawla/angularjs-filters",
   "authors": [
