@@ -122,13 +122,7 @@ angular.module("ch.filters",[])
         } else {
             var t = new Date(number * 1000);
             var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-            var year = t.getFullYear();
-            var month = months[t.getMonth()];
-            var day = t.getDate();
-            var hour = t.getHours();
-            var min = t.getMinutes();
-            var sec = t.getSeconds();
-            var time = day +'/'+month+'/'+year+' '+hour+':'+min+':'+sec;
+            var time = t.getDate() +'/'+ months[t.getMonth()]+'/'+t.getFullYear()+' '+t.getHours()+':'+t.getMinutes()+':'+t.getSeconds();
             return time;
         }
     }
