@@ -113,4 +113,24 @@ angular.module("ch.filters",[])
     return arr.reverse();   
   } 
  }                
-]);
+]).filter("unixtimestamp", [function() {
+    return function(number) {
+        // Is the passed data a number?
+        if(isNaN(number) || number < 1) {
+            // If not number, just return the entered value (Do not change user value!)
+            return number;
+        } else {
+            var t = new Date(number * 1000);
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            var year = t.getFullYear();
+            var month = months[t.getMonth()];
+            var day = t.getDate();
+            var hour = t.getHours();
+            var min = t.getMinutes();
+            var sec = t.getSeconds();
+            var time = day +'/'+month+'/'+year+' '+hour+':'+min+':'+sec;
+            return time;
+        }
+    }
+}
+]);;
