@@ -129,21 +129,6 @@ A library of common AngularJS filters. Each filter is individually tested for va
   </tr>
 </table>
 
-### Other Filters
-<table>
-  <tr>
-   <th>Filter</th>
-   <th>Usage</th>
-   <th>Result</i></th>
-  </tr>
-  <tr>
-   <td><i><b>unixtimestamp</b></i></td>
-   <td><i>123456789 | unixtimestamp</i></td>
-   <td><i>30  Nov  1973  -  1:3:9</i></td>
-  </tr>
-</table>
-
-
 ### Unit Testing
 Each of the filter is covered by Unit Test extensively.  If you find any input unhandelled, please let me know. Run the unit tests using following commands:
  ```
