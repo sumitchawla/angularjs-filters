@@ -215,4 +215,12 @@ function executeTests () {
      assert.deepEqual(filter([1, 2, 3, 4]), [4, 3, 2, 1]);
      assert.deepEqual(filter(["Banana", "Orange", "Apple", "Mango"]) , [  "Mango","Apple","Orange", "Banana"]);
    }));
+   
+   it('Tests unixtimestamp filter', inject(function($filter) {
+    var filter = $filter('unixtimestamp');
+    assert.equal(filter('') , '');
+    assert.equal(filter(null) , '');
+    assert.equal(filter(undefined) , '');
+    assert.equal(filter('123456789') , '30  Nov  1973  -  1:3:9');
+}));
 }
