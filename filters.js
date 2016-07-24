@@ -133,4 +133,4 @@ angular.module("ch.filters",[])
         }
     }
 }
-]);;
+]);
