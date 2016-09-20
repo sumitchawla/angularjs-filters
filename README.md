@@ -57,7 +57,7 @@ A library of common AngularJS filters. Each filter is individually tested for va
    <td><i>UPPERCASE ALL</i></td>
   </tr>
   <tr>
-   <td><i><b>trimu, trimstart, trimend</b><br/> String Trim Functions </i></td>
+   <td><i><b>trim, trimstart, trimend</b><br/> String Trim Functions </i></td>
    <td><i>' Hello Mr. ' | string.trim</i></td>
    <td><i>Hello Mr.</i></td>
   </tr>
