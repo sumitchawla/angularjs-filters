@@ -129,6 +129,20 @@ A library of common AngularJS filters. Each filter is individually tested for va
   </tr>
 </table>
 
+### Other
+<table>
+  <tr>
+   <th>Filter</th>
+   <th>Usage</th>
+   <th>Result</i></th>
+  </tr>
+  <tr>
+   <td><i><b>utixtimeconvertor</b><br/>Converts unix timestamp to human readable time.</i></td>
+   <td><i>'1596971407' | utixtimeconvertor</i></td>
+   <td><i>9  Aug  2020  -  4:10:7</i></td>
+  </tr>
+</table>
+
 ### Unit Testing
 Each of the filter is covered by Unit Test extensively.  If you find any input unhandelled, please let me know. Run the unit tests using following commands:
  ```
