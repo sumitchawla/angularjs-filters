@@ -57,7 +57,7 @@ A library of common AngularJS filters. Each filter is individually tested for va
    <td><i>UPPERCASE ALL</i></td>
   </tr>
   <tr>
-   <td><i><b>trim, trimstart, trimend</b><br/> String Trim Functions </i></td>
+   <td><i><b>trimu, trimstart, trimend</b><br/> String Trim Functions </i></td>
    <td><i>' Hello Mr. ' | string.trim</i></td>
    <td><i>Hello Mr.</i></td>
   </tr>
@@ -137,7 +137,7 @@ A library of common AngularJS filters. Each filter is individually tested for va
    <th>Result</i></th>
   </tr>
   <tr>
-   <td><i><b>utixtimeconvertor</b><br/>Converts unix timestamp to human readable time.</i></td>
+   <td><i><b>utixtimeconvertor</b><br/>Converts unix timestamp to human readable (friedly) time.</i></td>
    <td><i>'1596971407' | utixtimeconvertor</i></td>
    <td><i>9  Aug  2020  -  4:10:7</i></td>
   </tr>
